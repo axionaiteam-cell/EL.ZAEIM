@@ -1,1 +1,374 @@
-content://downloads/all_downloads/5495
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة الزعيم | أ. تامر ناجح</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+:root {
+  --gold: #C9A84C;
+  --dark-gold: #8B6914;
+  --bg-deep: #0f0202;
+  --bg-panel: #1a0a0a;
+  --text-color: #f5e6c8;
+  --accent-red: #8B1A1A;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-color);
+  font-family: 'Cairo', sans-serif;
+  user-select: none;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 2, 2, 0.98);
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
+
+.logo-img {
+  width: 85px;
+  filter: drop-shadow(0 0 8px var(--gold));
+  transition: 0.3s;
+}
+
+header h1 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+header p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.page {
+  display: none;
+  animation: slideIn 0.6s ease-out;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.card {
+  background: var(--bg-panel);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.menu-btn {
+  background: linear-gradient(145deg, #2a0a0a, #1a0505);
+  border: 1px solid var(--gold);
+  padding: 30px 15px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  color: var(--text-color);
+}
+
+.menu-btn:hover {
+  background: var(--gold);
+  color: #000;
+  transform: translateY(-10px);
+}
+
+.btn-main {
+  background: linear-gradient(90deg, var(--dark-gold), var(--gold));
+  color: #000;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: 900;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  background: #000;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 12px;
+  font-family: 'Cairo';
+}
+
+#atlasBot {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--gold);
+  color: #000;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2000;
+  font-weight: 900;
+  box-shadow: 0 0 25px var(--gold);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+footer {
+  text-align: center;
+  padding: 50px;
+  border-top: 1px solid #222;
+  margin-top: 60px;
+}
+
+.axion {
+  letter-spacing: 6px;
+  font-weight: 900;
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+#blackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+</style>
+</head>
+<body oncontextmenu="return false;">
+
+<div id="blackout">
+  <h1>⚠️ محتوى محمي للزعيم</h1>
+</div>
+
+<header>
+  <img src="https://i.ibb.co/XRTZf6V/1000343076.jpg" class="logo-img" alt="الزعيم">
+  <h1>الأستاذ تامر ناجح</h1>
+  <p>إمبراطور التاريخ والجغرافيا</p>
+</header>
+
+<div class="container">
+  <section id="loginPage" class="page active">
+    <div class="card" style="max-width: 500px; margin: auto; text-align: center;">
+      <h2 style="color: var(--gold); margin-bottom: 25px;">دخول الطالب</h2>
+      <input type="text" id="stuName" placeholder="اكتب اسمك الثلاثي">
+      <select id="stuYear">
+        <option value="">حدد سنتك الدراسية</option>
+        <optgroup label="الإعدادية">
+          <option value="1إ">الصف الأول الإعدادي</option>
+          <option value="2إ">الصف الثاني الإعدادي</option>
+          <option value="3إ">الصف الثالث الإعدادي</option>
+        </optgroup>
+        <optgroup label="الثانوية">
+          <option value="1ث">الصف الأول الثانوي</option>
+          <option value="2ث">الصف الثاني الثانوي</option>
+          <option value="3ث">الصف الثالث الثانوي</option>
+        </optgroup>
+      </select>
+      <button class="btn-main" onclick="studentLogin()">دخول للمنصة</button>
+      <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; cursor: pointer;" onclick="adminLoginPrompt()">إدارة المنصة (TNhg19)</p>
+    </div>
+  </section>
+
+  <section id="studentDash" class="page">
+    <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h3>أهلاً بك: <span id="activeStuName" style="color: var(--gold);"></span></h3>
+        <p>الصف: <span id="activeYearTxt" style="color: var(--gold);"></span></p>
+      </div>
+      <div style="text-align: center;">
+        <span style="font-size: 1.5rem;">🪙</span><br><small id="userCoins">100</small>
+      </div>
+    </div>
+    <div class="grid-menu">
+      <div class="menu-btn" onclick="renderContent('lecture')">📺 المحاضرات</div>
+      <div class="menu-btn" onclick="showQuiz()">🧠 بنك الأسئلة</div>
+      <div class="menu-btn" onclick="renderContent('pdf')">📚 الملازم</div>
+      <div class="menu-btn" onclick="showHonor()">🏆 لوحة الشرف</div>
+      <div class="menu-btn" onclick="showCert()">📜 الشهادات</div>
+      <div class="menu-btn" onclick="showMessages()">💬 الرسائل</div>
+    </div>
+  </section>
+
+  <section id="contentPage" class="page">
+    <button class="btn-main" style="width: auto; padding: 10px 20px;" onclick="showPage('studentDash')">⬅️ رجوع</button>
+    <h2 id="contentHeading" style="margin: 20px 0; color: var(--gold);"></h2>
+    <div id="contentList" class="grid-menu"></div>
+  </section>
+
+  <section id="adminPanel" class="page">
+    <button class="btn-main" style="width: auto; background: var(--accent-red); color: #fff;" onclick="location.reload()">خروج</button>
+    <h2 style="color: var(--gold); margin: 25px 0;">لوحة التحكم</h2>
+    <div class="card">
+      <h4>🤖 تحديث ذكاء (أطلس)</h4>
+      <textarea id="aiCodeInput" placeholder="الصق كود التطوير هنا..."></textarea>
+      <button class="btn-main" onclick="updateAtlasAI()">تحديث الكود</button>
+    </div>
+    <div class="card">
+      <h4>رفع محتوى جديد</h4>
+      <select id="admYear">
+        <option value="1إ">1إ</option><option value="2إ">2إ</option><option value="3إ">3إ</option>
+        <option value="1ث">1ث</option><option value="2ث">2ث</option><option value="3ث">3ث</option>
+      </select>
+      <select id="admType">
+        <option value="lecture">محاضرة</option><option value="pdf">ملزمة</option>
+      </select>
+      <input type="text" id="admTitle" placeholder="اسم الدرس">
+      <input type="text" id="admLink" placeholder="الرابط">
+      <button class="btn-main" onclick="adminSave()">نشر الآن</button>
+    </div>
+  </section>
+</div>
+
+<div id="atlasBot" onclick="atlasChat()">أطلس</div>
+
+<footer>
+  <p><b>الأستاذ تامر ناجح</b> - معلم التاريخ والجغرافيا</p>
+  <div class="axion">BY AXION</div>
+</footer>
+
+<script>
+let atlasBrain = { welcome: "أنا أطلس، رفيقك في المذاكرة. كيف أساعدك؟" };
+const DB = {
+  save: (k, v) => localStorage.setItem('Z_V_Final_'+k, JSON.stringify(v)),
+  load: (k) => JSON.parse(localStorage.getItem('Z_V_Final_'+k)) || []
+};
+
+if(localStorage.getItem('atlas_core')) {
+  atlasBrain = JSON.parse(localStorage.getItem('atlas_core'));
+}
+
+function studentLogin() {
+  const name = document.getElementById('stuName').value;
+  const year = document.getElementById('stuYear').value;
+  if(!name || !year) return Swal.fire('تنبيه', 'أكمل بياناتك', 'warning');
+  window.user = { name, year };
+  document.getElementById('activeStuName').innerText = name;
+  document.getElementById('activeYearTxt').innerText = year;
+  showPage('studentDash');
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function updateAtlasAI() {
+  try {
+    const code = JSON.parse(document.getElementById('aiCodeInput').value);
+    atlasBrain = code;
+    localStorage.setItem('atlas_core', JSON.stringify(code));
+    Swal.fire('تم', 'تم تحديث عقل أطلس', 'success');
+  } catch(e) {
+    Swal.fire('خطأ', 'تأكد من صحة الكود', 'error');
+  }
+}
+
+function atlasChat() {
+  Swal.fire({
+    title: 'أطلس AI',
+    text: atlasBrain.welcome,
+    input: 'text',
+    confirmButtonText: 'إرسال'
+  });
+}
+
+function adminLoginPrompt() {
+  Swal.fire({ title: 'الإدارة', input: 'password' }).then(res => {
+    if(res.value === 'TNhg19') showPage('adminPanel');
+  });
+}
+
+function adminSave() {
+  const item = {
+    year: document.getElementById('admYear').value,
+    type: document.getElementById('admType').value,
+    title: document.getElementById('admTitle').value,
+    link: document.getElementById('admLink').value,
+    id: Date.now()
+  };
+  let items = DB.load('items');
+  items.push(item);
+  DB.save('items', items);
+  Swal.fire('تم', 'تم النشر بنجاح', 'success');
+}
+
+function renderContent(type) {
+  const items = DB.load('items').filter(i => i.year === window.user.year && i.type === type);
+  document.getElementById('contentHeading').innerText = type === 'lecture' ? 'المحاضرات' : 'الملازم';
+  const container = document.getElementById('contentList');
+  container.innerHTML = items.map(i => `
+    <div class="card" style="text-align:center;">
+      <h4>${i.title}</h4>
+      <button class="btn-main" onclick="window.open('${i.link}')">فتح المحتوى</button>
+    </div>
+  `).join('') || '<p>لا يوجد محتوى متاح حالياً.</p>';
+  showPage('contentPage');
+}
+
+window.addEventListener('keyup', (e) => {
+  if(e.key === 'PrintScreen') {
+    document.getElementById('blackout').style.display = 'flex';
+    setTimeout(() => document.getElementById('blackout').style.display = 'none', 3000);
+  }
+});
+</script>
+</body>
+</html>
